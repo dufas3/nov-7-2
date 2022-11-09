@@ -10,7 +10,12 @@ const searchCode = ()=>{
             .then(result=>searchResponse = result)
             .then(()=>console.log(searchResponse))
             .then(()=>{
+                if (searchResponse.data[0] ==undefined){
+                    document.querySelector(".result").value = "Netesisingas kodas"
+                }
+                else {
                 document.querySelector('.result').value = searchResponse.data[0].post_code
+                }
             })
     })
 }
